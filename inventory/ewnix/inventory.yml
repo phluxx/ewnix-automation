@@ -11,3 +11,8 @@ all:
           ansible_host: 64.227.6.139
         Ewnix_1_WN2:
           ansible_host: 159.223.96.174
+
+    Dev:
+      hosts:
+        Ewnix_Devbox:
+          ansible_host: 64.23.233.246
