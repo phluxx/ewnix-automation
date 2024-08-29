@@ -1,0 +1,12 @@
+---
+- name: Restart K3s on Control Plane
+  systemd:
+    name: k3s
+    state: restarted
+  when: "'ControlPlane' in group_names"
+
+- name: Restart K3s on Worker Nodes
+  systemd:
+    name: k3s-agent
+    state: restarted
+  when: "'WorkerNodes' in group_names"
