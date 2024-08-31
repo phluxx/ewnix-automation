@@ -11,7 +11,7 @@
   shell: |
     curl -sfL https://get.k3s.io | sh -s - agent \
     --server https://{{ hostvars[groups['ControlPlane'][0]].ansible_host }}:6443 \
-    --token {{ k3s_token }}
+    --token $K3S_TOKEN
   when: "'WorkerNodes' in group_names"
   notify:
     - Restart K3s on Worker Nodes
